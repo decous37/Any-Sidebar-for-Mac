@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleName</key><string>Any Sidebar for Mac</string>
+<key>CFBundleDisplayName</key><string>Any Sidebar for Mac</string>
+<key>CFBundleIdentifier</key><string>com.decous.anysidebar.mac</string>
+<key>CFBundleExecutable</key><string>AnySidebarMac</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>CFBundleShortVersionString</key><string>0.1.0</string>
+<key>CFBundleVersion</key><string>1</string>
+<key>LSMinimumSystemVersion</key><string>14.0</string>
+<key>LSUIElement</key><true/>
+<key>NSHighResolutionCapable</key><true/>
+<key>CFBundleIconFile</key><string>AppIcon</string>
+<key>NSScreenCaptureUsageDescription</key><string>仅在你点击读屏或使用读屏快捷键时截取指定区域或窗口，发送问题前不会上传。</string>
+</dict></plist>

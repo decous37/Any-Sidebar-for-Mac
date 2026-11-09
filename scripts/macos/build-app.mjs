@@ -1,0 +1,25 @@
+import {spawnSync} from 'node:child_process';
+import {mkdir,cp,rm,readFile,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {signingIdentity} from './signing.mjs';
+const run=(cmd,args)=>{const r=spawnSync(cmd,args,{stdio:'inherit'});if(r.status!==0)process.exit(r.status??1);};
+run(process.execPath,['scripts/macos/build-web.mjs']);
+run(process.execPath,['scripts/macos/build-icons.mjs']);
+run('swift',['build','--package-path','apps/macos/native','-c','release','--arch','arm64']);
+const app=resolve('build/macos/AnySidebarMac.app');
+await rm(app,{recursive:true,force:true});await mkdir(`${app}/Contents/MacOS`,{recursive:true});await mkdir(`${app}/Contents/Resources`,{recursive:true});
+await cp('apps/macos/native/.build/arm64-apple-macosx/release/AnySidebarMac',`${app}/Contents/MacOS/AnySidebarMac`);
+await cp('build/macos/AppIcon.icns',`${app}/Contents/Resources/AppIcon.icns`);
+await cp('apps/macos/resources/Info.plist',`${app}/Contents/Info.plist`);
+await cp('build/macos/web',`${app}/Contents/Resources/web`,{recursive:true});
+await mkdir(`${app}/Contents/Resources/contracts`,{recursive:true});
+for(const file of ['model-capabilities.json','bridge.schema.json','desktop-reading-prompt.txt'])await cp(`apps/macos/contracts/${file}`,`${app}/Contents/Resources/contracts/${file}`);
+await cp('apps/macos/resources/privacy.html',`${app}/Contents/Resources/privacy.html`);
+await cp('LICENSE',`${app}/Contents/Resources/LICENSE`);
+await cp('THIRD_PARTY_NOTICES.txt',`${app}/Contents/Resources/THIRD_PARTY_NOTICES.txt`);
+const meta=JSON.parse(await readFile('apps/macos/product.json','utf8'));await writeFile(`${app}/Contents/Resources/product.json`,JSON.stringify(meta,null,2));
+// Local development identity only; public distribution still needs Developer ID and notarization.
+const identity=await signingIdentity();
+run('codesign',['--force','--sign',identity??'-',app]);
+run('codesign',['--verify','--deep','--strict',app]);
+console.log(`已构建本机开发包：${app}`);

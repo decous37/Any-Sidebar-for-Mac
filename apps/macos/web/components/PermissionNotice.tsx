@@ -1,0 +1,2 @@
+import type {Bootstrap} from '../protocol';
+export default function PermissionNotice({data,onSettings}:{data:Bootstrap;onSettings:()=>void}){const enabled=data.runtime.preferences.autoSelectionEnabled,missing=enabled&&!data.permissions.accessibility;if(!missing&&data.runtime.preferences.disclosureVersion==='v1')return null;return <div className="notice"><span>{missing?'自动划词需要辅助功能权限。':'开启划词或读屏前，请先确认本机采集说明。'} <button className="text-button" onClick={onSettings}>前往设置</button></span></div>;}

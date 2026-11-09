@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "commands": {
+    "bootstrap": {
+      "required": {},
+      "optional": {}
+    },
+    "listTasks": {
+      "required": {},
+      "optional": {
+        "cursor": "integer"
+      }
+    },
+    "getTaskView": {
+      "required": {
+        "taskId": "id"
+      },
+      "optional": {
+        "cursor": "integer"
+      }
+    },
+    "createTask": {
+      "required": {
+        "title": "string"
+      },
+      "optional": {}
+    },
+    "renameTask": {
+      "required": {
+        "taskId": "id",
+        "title": "string",
+        "expectedRevision": "integer"
+      },
+      "optional": {}
+    },
+    "switchTask": {
+      "required": {
+        "taskId": "id"
+      },
+      "optional": {}
+    },
+    "changeDraft": {
+      "required": {
+        "taskId": "id",
+        "expectedRevision": "integer",
+        "change": "object"
+      },
+      "optional": {}
+    },
+    "startCapture": {
+      "required": {
+        "taskId": "id",
+        "mode": "region|window"
+      },
+      "optional": {}
+    },
+    "cancelCapture": {
+      "required": {
+        "captureOperationId": "id"
+      },
+      "optional": {}
+    },
+    "send": {
+      "required": {
+        "taskId": "id",
+        "expectedDraftRevision": "integer",
+        "expectedPreferencesRevision": "integer"
+      },
+      "optional": {}
+    },
+    "stop": {
+      "required": {
+        "target": "object"
+      },
+      "optional": {}
+    },
+    "retry": {
+      "required": {
+        "taskId": "id",
+        "turnId": "id",
+        "requestId": "id",
+        "expectedPreferencesRevision": "integer"
+      },
+      "optional": {}
+    },
+    "regenerate": {
+      "required": {
+        "taskId": "id",
+        "turnId": "id",
+        "requestId": "id",
+        "expectedPreferencesRevision": "integer"
+      },
+      "optional": {}
+    },
+    "restoreSubmission": {
+      "required": {
+        "taskId": "id",
+        "requestId": "id",
+        "expectedDraftRevision": "integer"
+      },
+      "optional": {}
+    },
+    "savePreferences": {
+      "required": {
+        "expectedRevision": "integer",
+        "patch": "object"
+      },
+      "optional": {}
+    },
+    "startShortcutRecording": {
+      "required": {},
+      "optional": {
+        "kind": "capture|panel"
+      }
+    },
+    "cancelShortcutRecording": {
+      "required": {
+        "recordingOperationId": "id"
+      },
+      "optional": {}
+    },
+    "setKey": {
+      "required": {
+        "key": "string"
+      },
+      "optional": {}
+    },
+    "clearKey": {
+      "required": {},
+      "optional": {}
+    },
+    "getCredentialStatus": {
+      "required": {},
+      "optional": {}
+    },
+    "acceptDisclosure": {
+      "required": {
+        "version": "v1"
+      },
+      "optional": {}
+    },
+    "setAutoSelectionEnabled": {
+      "required": {
+        "enabled": "boolean",
+        "expectedRevision": "integer"
+      },
+      "optional": {}
+    },
+    "requestPermission": {
+      "required": {
+        "kind": "accessibility|screen"
+      },
+      "optional": {}
+    },
+    "deleteTask": {
+      "required": {
+        "taskId": "id",
+        "expectedRevision": "integer"
+      },
+      "optional": {}
+    },
+    "clearAllTasks": {
+      "required": {},
+      "optional": {}
+    },
+    "getOperation": {
+      "required": {
+        "sourceOperationId": "id"
+      },
+      "optional": {}
+    },
+    "setCompanionVisible": {
+      "required": {
+        "visible": "boolean"
+      },
+      "optional": {}
+    },
+    "copyText": {
+      "required": {
+        "text": "string"
+      },
+      "optional": {}
+    },
+    "hidePanel": {
+      "required": {},
+      "optional": {}
+    }
+  }
+}

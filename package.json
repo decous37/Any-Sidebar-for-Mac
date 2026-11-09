@@ -1,0 +1,61 @@
+{
+  "name": "any-sidebar-for-mac",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^24.15.0 || ^26.0.0"
+  },
+  "scripts": {
+    "typecheck:mac": "tsc --noEmit -p tsconfig.macos.json",
+    "lint:mac": "eslint apps/macos/web src/ui scripts/macos tests/macos vite.macos.config.ts vitest.macos.config.ts",
+    "test:mac:web": "vitest run --config vitest.macos.config.ts",
+    "test:mac:native": "node scripts/macos/test-native.mjs",
+    "build:mac:web": "node scripts/macos/build-web.mjs",
+    "build:mac": "node scripts/macos/build-app.mjs",
+    "audit:mac": "node scripts/macos/audit-app.mjs",
+    "package:mac": "node scripts/macos/package-app.mjs",
+    "install:mac": "node scripts/macos/install-local.mjs",
+    "typecheck": "npm run typecheck:mac",
+    "lint": "npm run lint:mac",
+    "test:web": "npm run test:mac:web",
+    "test:native": "npm run test:mac:native",
+    "test:e2e": "playwright test --config playwright.macos.config.ts",
+    "build": "npm run build:mac",
+    "audit:package": "npm run audit:mac",
+    "package": "npm run package:mac",
+    "install:local": "npm run install:mac"
+  },
+  "dependencies": {
+    "lucide-react": "1.61.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-markdown": "10.1.0",
+    "rehype-sanitize": "6.0.0",
+    "remark-gfm": "4.0.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@testing-library/dom": "10.4.2",
+    "@testing-library/react": "16.3.3",
+    "@testing-library/user-event": "14.6.8",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "eslint": "10.13.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "fflate": "0.8.3",
+    "jsdom": "30.1.3",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.0",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/decous37/Any-Sidebar-for-Mac.git"
+  },
+  "description": "用划词和手动读屏辅助阅读本地资料的 macOS 小助手"
+}

@@ -1,0 +1,123 @@
+[
+  {
+    "id": "bootstrap",
+    "input": {
+      "version": 1,
+      "viewEpoch": "00000000-0000-4000-8000-000000000001",
+      "messageId": "00000000-0000-4000-8000-000000000002",
+      "operationId": "00000000-0000-4000-8000-000000000003",
+      "command": "bootstrap",
+      "args": {}
+    },
+    "allowed": true
+  },
+  {
+    "id": "version",
+    "input": {
+      "version": 2,
+      "viewEpoch": "00000000-0000-4000-8000-000000000001",
+      "messageId": "00000000-0000-4000-8000-000000000002",
+      "operationId": "00000000-0000-4000-8000-000000000003",
+      "command": "bootstrap",
+      "args": {}
+    },
+    "allowed": false
+  },
+  {
+    "id": "unknown",
+    "input": {
+      "version": 1,
+      "viewEpoch": "00000000-0000-4000-8000-000000000001",
+      "messageId": "00000000-0000-4000-8000-000000000002",
+      "operationId": "00000000-0000-4000-8000-000000000003",
+      "command": "readKey",
+      "args": {}
+    },
+    "allowed": false
+  },
+  {
+    "id": "extra",
+    "input": {
+      "version": 1,
+      "viewEpoch": "00000000-0000-4000-8000-000000000001",
+      "messageId": "00000000-0000-4000-8000-000000000002",
+      "operationId": "00000000-0000-4000-8000-000000000003",
+      "command": "bootstrap",
+      "args": {},
+      "unexpected": 1
+    },
+    "allowed": false
+  },
+  {
+    "id": "bad-id",
+    "input": {
+      "version": 1,
+      "viewEpoch": "00000000-0000-4000-8000-000000000001",
+      "messageId": "00000000-0000-4000-8000-000000000002",
+      "operationId": "/tmp/a",
+      "command": "bootstrap",
+      "args": {}
+    },
+    "allowed": false
+  },
+  {
+    "id": "args-extra",
+    "input": {
+      "version": 1,
+      "viewEpoch": "00000000-0000-4000-8000-000000000001",
+      "messageId": "00000000-0000-4000-8000-000000000002",
+      "operationId": "00000000-0000-4000-8000-000000000003",
+      "command": "bootstrap",
+      "args": {
+        "path": "/tmp/a"
+      }
+    },
+    "allowed": false
+  },
+  {
+    "id": "stop-target",
+    "input": {
+      "version": 1,
+      "viewEpoch": "00000000-0000-4000-8000-000000000001",
+      "messageId": "00000000-0000-4000-8000-000000000002",
+      "operationId": "00000000-0000-4000-8000-000000000003",
+      "command": "stop",
+      "args": {
+        "target": {
+          "kind": "request",
+          "taskId": "00000000-0000-4000-8000-000000000003",
+          "requestId": "00000000-0000-4000-8000-000000000002"
+        }
+      }
+    },
+    "allowed": true
+  },
+  {
+    "id": "panel-shortcut-recording",
+    "input": {
+      "version": 1,
+      "viewEpoch": "00000000-0000-4000-8000-000000000001",
+      "messageId": "00000000-0000-4000-8000-000000000002",
+      "operationId": "00000000-0000-4000-8000-000000000003",
+      "command": "startShortcutRecording",
+      "args": {
+        "kind": "panel"
+      }
+    },
+    "allowed": true
+  },
+  {
+    "id": "unknown-shortcut-kind",
+    "input": {
+      "version": 1,
+      "viewEpoch": "00000000-0000-4000-8000-000000000001",
+      "messageId": "00000000-0000-4000-8000-000000000002",
+      "operationId": "00000000-0000-4000-8000-000000000003",
+      "command": "startShortcutRecording",
+      "args": {
+        "kind": "shell"
+      }
+    },
+    "allowed": false
+  }
+]

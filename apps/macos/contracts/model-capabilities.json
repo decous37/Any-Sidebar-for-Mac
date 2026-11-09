@@ -1,0 +1,56 @@
+{
+  "version": "2026-11-09",
+  "models": [
+    {
+      "providerId": "deepseek",
+      "modelId": "deepseek-flash",
+      "label": "DeepSeek Flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "contextTokens": 1048576,
+      "maxOutputTokens": 384000,
+      "imageRules": {
+        "maxInlineBytes": 33554432,
+        "maxBodyBytes": 50331648,
+        "maxImageParts": 600,
+        "maxDimension": 8192,
+        "manyImagesThreshold": 15,
+        "manyImagesMaxDimension": 4096,
+        "maxTokensPerImage": 1024
+      },
+      "version": "2026-11-09",
+      "verifiedDocumentationDate": "2026-11-09"
+    },
+    {
+      "providerId": "deepseek",
+      "modelId": "deepseek-v4-pro",
+      "label": "DeepSeek V4 Pro",
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "contextTokens": 1048576,
+      "maxOutputTokens": 384000,
+      "imageRules": null,
+      "version": "2026-11-09",
+      "verifiedDocumentationDate": "2026-11-09"
+    }
+  ],
+  "appLimits": {
+    "maxNewImages": 9,
+    "maxImageBytes": 10485760,
+    "maxImageParts": 16,
+    "maxBodyBytes": 25165824
+  }
+}

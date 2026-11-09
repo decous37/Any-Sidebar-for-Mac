@@ -1,0 +1,3 @@
+import type {ConversationTurn} from '../../../src/ui/view-models';
+import type {Turn} from './protocol';
+export function turnView(t:Turn,index:number,count:number):ConversationTurn{return {id:t.id,requestId:t.requestId,question:t.prompt,answer:t.answer,reasoning:t.reasoning,status:t.status,error:t.error?.message,canRegenerate:t.canRegenerate,canRetry:index===count-1&&['failed','stopped','interrupted','truncated'].includes(t.status),quotes:[...t.externalQuotes.map(q=>({id:q.id,text:q.text,label:q.source.documentTitle??q.source.appName??'外部选文'})),...(t.assistantQuote?[{id:t.assistantQuote.id,text:t.assistantQuote.text,label:'AI 回答'}]:[])],images:t.images};}

@@ -1,0 +1,4 @@
+import {X} from 'lucide-react';
+import type {ImageView} from '../protocol';
+import TooltipButton from '../../../../src/ui/TooltipButton';
+export default function ScreenshotStrip({images,onPreview,onRemove}:{images:ImageView[];onPreview:(image:ImageView)=>void;onRemove:(id:string)=>void}){if(!images.length)return null;return <div className="screenshot-strip" aria-label="待发送截图">{images.map(image=><div className="screenshot-item" key={image.draftItemId??image.id}><button className="screenshot-open" aria-label="预览截图" onClick={()=>onPreview(image)}><img src={image.thumbnailURL} alt={`截图 ${image.width} × ${image.height}`} loading="lazy"/></button><TooltipButton className="icon-button small screenshot-remove" aria-label="移除截图" tip="移除" onClick={()=>onRemove(image.draftItemId!)}><X size={10}/></TooltipButton></div>)}<span>{images.length}/9</span></div>;}
