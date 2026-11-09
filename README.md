@@ -1,6 +1,8 @@
 # Any Sidebar for Mac
 
-一个留在桌边的阅读工具。划选不懂的文字，或截取眼前的代码、公式和图表，带着资料直接问 AI。
+一个轻量的 macOS AI 侧边栏，让对话留在正在阅读的文档旁。
+
+通过桌面入口展开浮动侧边栏，划选文字或手动截取代码、公式和图表，带着资料直接问 AI，无需来回切换应用。
 
 当前版本 **0.1.0，本机开发版**。面向 **Apple Silicon、macOS 14+**，自备 [DeepSeek API Key](https://platform.deepseek.com/)。软件免费，没有账号、会员或每日次数限制；API 用量由你的 DeepSeek 账户承担。
 
@@ -9,7 +11,7 @@
 - **划词提问**：从「预览」等阅读软件接收选中文字，自动加入引用，不主动弹出对话。
 - **手动读屏**：框选区域或截取窗口，先加入草稿，再决定是否发送。也可以只发送图片。
 - **按任务聊天**：手动新建和切换会话，同一会话可以讨论多份文档。
-- **随手展开**：桌面小助手、快捷键和菜单栏都能打开对话；支持亮暗主题、字号和思考强度切换。
+- **随手展开**：桌面入口、快捷键和菜单栏都能打开侧边栏；支持亮暗主题、字号和思考强度切换。
 
 不自动读取整篇 PDF，不持续录屏。划词依赖阅读软件提供选区，扫描 PDF 或部分自绘阅读器可以改用截图。
 
@@ -92,4 +94,4 @@ npm run package
 
 遇到问题，欢迎到 [Issues](https://github.com/decous37/Any-Sidebar-for-Mac/issues)。请先隐藏 Key、私人文件和敏感截图。
 
-本项目从 [Any Sidebar](https://github.com/decous37/Any-Sidebar) 拆出，沿用其聊天界面。采用 [MIT 许可证](LICENSE)，第三方许可见 [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt)。与 DeepSeek 和 Apple 没有官方关联。
+本项目是 [Any Sidebar](https://github.com/decous37/Any-Sidebar) 的独立 Mac 版本，沿用其侧边栏对话设计。采用 [MIT 许可证](LICENSE)，第三方许可见 [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt)。与 DeepSeek 和 Apple 没有官方关联。
