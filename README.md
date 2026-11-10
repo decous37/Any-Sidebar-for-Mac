@@ -6,6 +6,13 @@
 
 当前版本 **0.1.0，本机开发版**。面向 **Apple Silicon、macOS 14+**，自备 [DeepSeek API Key](https://platform.deepseek.com/)。软件免费，没有账号、会员或每日次数限制；API 用量由你的 DeepSeek 账户承担。
 
+<p align="center">
+  <img src="docs/images/mac-chat-light.png" alt="亮色侧栏中的连续对话" width="320">
+  <img src="docs/images/mac-chat-dark.png" alt="暗色侧栏中的同一段对话" width="320">
+</p>
+
+亮暗主题下的连续对话。[查看全部 6 张界面截图](docs/macos/screenshots.md)，包括回答引用、会话抽屉和设置。
+
 ## 能做什么
 
 - **划词提问**：从「预览」等阅读软件接收选中文字，自动加入引用，不主动弹出对话。

@@ -1,5 +1,7 @@
 # Mac 使用指南
 
+想先看看实际界面，可以查看[六张展示截图](screenshots.md)。
+
 先按 [安装说明](../../README.md)构建并打开应用，在设置中保存 DeepSeek API Key。Key 只显示是否已保存，调用费用由你的 DeepSeek 账户承担。
 
 ## 展开、收起和退出
